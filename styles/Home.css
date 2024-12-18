@@ -1,0 +1,363 @@
+body {  
+    margin: 0;  
+    font-family: 'Satoshi', Arial, sans-serif;  
+    background-color: #000;  
+    color: #fff;  
+} 
+
+/* Header Styles */  
+header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 20px 50px;  
+    background-color: #000;  
+}  
+header h1 {  
+    color: #ff7f00;  
+    margin: 0;  
+    font-family: 'Abril Fatface', cursive;   
+    letter-spacing: 1px;  
+}  
+
+nav a {  
+    color: #fff;  
+    margin: 0 15px;  
+    text-decoration: none;  
+    transition: color 0.3s;  
+    font-family:'ABeeZee', 'Regular'; 
+}  
+nav a:hover {  
+    color: #ff7f00;  
+}  
+
+/* Hero Section Styles */  
+.hero {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 50px 20px;   
+    background-color: #000;  
+    text-align: left;  
+}  
+.hero-content {  
+    max-width: 60%;  
+}  
+.hero-content h2 {  
+    font-size: 3em;  
+    margin-bottom: 20px;  
+    font-family: 'Alumni Sans SC', sans-serif;  
+    font-weight: 700;  
+}  
+.hero-content p {  
+    font-size: 1.5em;  
+    margin-bottom: 30px;  
+    font-family: 'Satoshi', Arial, sans-serif;  
+}  
+.hero button {  
+    background-color: #ab572d;  
+    color: #fff;  
+    border: none;  
+    padding: 15px 30px;  
+    font-size: 1em;  
+    cursor: pointer;  
+    border-radius: 5px;  
+    transition: background-color 0.3s;  
+    font-family: 'Inter', sans-serif;  
+}  
+.hero button:hover {  
+    background-color: #ff7f00;  
+}  
+.hero-image {  
+    max-width: 30%;  
+}  
+.hero-image img {  
+    width: 100%;  
+    height: auto;  
+}  
+
+/* Welcome Section Styles */  
+.welcome {  
+    background-image: url('../images/welcome parfume.jpg');  
+    background-size: cover;   
+    background-position: center;   
+    padding: 50px 20px;   
+    display: flex;   
+    justify-content: center;   
+    align-items: center;   
+    text-align: center;   
+}  
+.welcome-content {  
+    background-color: rgba(0, 0, 0, 0.7);  
+    padding: 30px;   
+    border-radius: 15px;   
+    max-width: 800px;   
+}  
+.welcome-title {  
+    color: #ff7f00;  
+    font-size: 2.5em;   
+    margin-bottom: 20px;  
+    font-family: 'Aleo', serif;  
+    font-weight: 700;  
+}  
+.welcome-description {  
+    color: #fff;  
+    font-size: 1.2em;  
+    line-height: 1.6;  
+    font-family: 'Satoshi', Arial, sans-serif;  
+}  
+
+/* Section Styles */  
+.section {  
+    padding: 50px 20px;  
+    text-align: center;  
+}  
+.section h2 {  
+    color: #ff7f00;  
+    margin-bottom: 30px;  
+    font-family: 'Abhaya Libre', serif;  
+    font-weight: 700;  
+}  
+.products, .collections {  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: center;  
+    gap: 20px;  
+}  
+.product, .collection {  
+    background-color: #333; /* Slightly transparent */  
+    padding: 20px;  
+    width: 220px; /* Slightly larger width */  
+    border-radius: 10px; /* Rounded corners */  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow */  
+    transition: transform 0.3s; /* Smooth transform */  
+}  
+.product:hover, .collection:hover {   
+    transform: scale(1.05); /* Scale up on hover */  
+}  
+.product img, .collection img {  
+    width: 100%;  
+    height: auto;  
+    border-radius: 10px; /* Rounded corners for images */  
+}  
+.product p, .collection p {  
+    margin: 10px 0;  
+    font-family: 'ABeeZee', sans-serif;  
+}
+
+/* Popup Styling */  
+.popup {  
+    display: none;  
+    position: fixed;  
+    z-index: 1000;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-color: rgba(0,0,0,0.6);  
+    justify-content: center;  
+    align-items: center;  
+    overflow: auto;  
+    padding: 20px; /* Added padding to prevent content touching screen edges */  
+}
+@keyframes slideUp {  
+    from {  
+        opacity: 0;  
+        transform: translateY(50px);  
+    }  
+    to {  
+        opacity: 1;  
+        transform: translateY(0);  
+    }  
+}    
+.popup-content {  
+    background-color: #333;
+    color: #fff;  
+    padding: 20px; /* Reduced padding */  
+    border-radius: 10px;  
+    width: 400px; /* Reduced width */  
+    max-width: 90%; /* Ensures responsiveness */  
+    text-align: center;  
+    position: relative;
+    font-family: 'ABeeZee', sans-serif;  
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);  
+    max-height: 80vh; /* Limit height to 80% of viewport height */  
+    overflow-y: auto; /* Allow scrolling if content is too long */
+    
+    opacity: 0;  
+    transform: translateY(50px);  
+    transition:   
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),   
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
+}
+.popup.show .popup-content {  
+    opacity: 1;  
+    transform: translateY(0);  
+    animation:   
+        slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;  
+}    
+.popup-content img {  
+    max-width: 250px; /* Reduced image size */  
+    height: auto;  
+    margin: 15px 0;  
+    border-radius: 10px;  
+    object-fit: contain; /* Ensures image maintains aspect ratio */  
+}  
+.popup-actions {  
+    display: flex;  
+    justify-content: center;  
+    gap: 10px; /* Reduced gap between buttons */  
+    margin-top: 15px;  
+}  
+.close-popup {  
+    position: absolute;  
+    top: 10px;  
+    right: 15px;  
+    font-size: 30px;  
+    cursor: pointer;  
+    color: #999;  
+}  
+.close-popup:hover {  
+    color: #ff7f00; 
+}
+/* Optional: Add responsive adjustments */  
+@media (max-width: 480px) {  
+    .popup-content {  
+        width: 95%; /* Even smaller on very small screens */  
+        padding: 15px;  
+    }  
+
+    .popup-content img {  
+        max-width: 200px;  
+    }  
+
+    .popup-actions {  
+        flex-direction: column;  
+        gap: 10px;  
+    }  
+}    
+
+/* Promo Section Styles */  
+.promo {  
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+    background-color: #1c1c1c;  
+    color: #fff;  
+    padding: 50px 20px;  
+    margin-bottom: 20px;  
+}  
+.promo-content {  
+    flex: 1;  
+    max-width: 50%;  
+}  
+.promo-content h2 {  
+    font-size: 2em;
+    color: #ff7f00;;  
+    margin-bottom: 20px;  
+    font-family: 'Alumni Sans SC', 'Regular';  
+    font-weight: 700;  
+}  
+.promo-content p {  
+    font-size: 1.2em;  
+    margin: 0;  
+    font-family: 'Satoshi', "Regular";
+}  
+.promo-image {  
+    flex: 1;  
+    display: flex;  
+    justify-content: center;  
+}  
+.promo-image img {  
+    width: 80%;  
+    height: auto;
+    border-radius: 10px;  
+}  
+@media (max-width: 768px) {  
+    .promo {  
+        flex-direction: column;  
+        align-items: center;  
+    }  
+    .promo-image img {  
+        width: 100%;  
+    }  
+}  
+
+/* Footer Styles */  
+footer {  
+    background-color: #1c1c1c;  
+    color: #fff;  
+    padding: 20px 50px;  
+}  
+.footer-container {  
+    display: flex;  
+    justify-content: space-between;  
+    flex-wrap: wrap;  
+    align-items: flex-start;  
+}  
+.footer-brand {  
+    flex: 1;  
+}  
+.footer-brand h3 {  
+    color: #ff7f00;  
+    margin-bottom: 10px;  
+    font-family: 'Abril Fatface', cursive;  
+} 
+.footer-links h4 {  
+    color: #ff7f00;  
+    margin-bottom: 10px;  
+    font-family: 'Inter', sans-serif;  
+    font-weight: 700;  
+}  
+.footer-links a {  
+    color: #fff;  
+    text-decoration: none;  
+    display: block;  
+    margin-bottom: 5px;  
+    font-family: 'ABeeZee', sans-serif;  
+} 
+footer .social {
+    display: flex;
+    gap: 10px;
+}
+footer .social a {
+    color: #ff7f00;
+    font-size: 1.5em;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.footer-links {  
+    display: flex;  
+    justify-content: center;  
+    flex: 10;  
+}  
+.footer-links > div {  
+    margin: 0 20px;  
+    text-align: center;  
+}  
+.footer-links h4 {  
+    color: #ff7f00;  
+    margin-bottom: 10px;  
+}  
+.footer-links a {  
+    color: #fff;  
+    text-decoration: none;  
+    display: block;  
+    margin-bottom: 5px;  
+}  
+.footer-links a:hover {  
+    text-decoration: underline;  
+}  
+@media (max-width: 768px) {  
+    header {  
+        flex-direction: column;  
+        text-align: center;  
+    }  
+    .footer-links {  
+        flex-direction: column;  
+    }  
+}

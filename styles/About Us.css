@@ -1,0 +1,255 @@
+body {  
+    margin: 0;  
+    font-family: 'Roboto', sans-serif; /* Base font for body text */  
+    background-color: #000;  
+    color: #fff;  
+}  
+
+header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 20px 50px;  
+    background-color: #000;  
+}  
+
+header h1 {  
+    color: #ff7f00;  
+    margin: 0;  
+    font-family: 'Abril Fatface', cursive; /* Decorative font for the header */  
+    letter-spacing: 1px;  
+}  
+
+nav a {  
+    color: #fff;  
+    margin: 0 15px;  
+    text-decoration: none;  
+    transition: color 0.3s;  
+    font-family: 'ABeeZee', sans-serif; /* Consistent font for navigation */  
+}  
+
+nav a:hover {  
+    color: #ff7f00;  
+}  
+
+.breadcrumb {  
+    padding: 20px;  
+    font-size: 14px;  
+}  
+
+.breadcrumb a {  
+    color: #ff7f00;  
+    text-decoration: none;  
+    font-family: 'ABeeZee', sans-serif; /* Consistent font for breadcrumb links */  
+}  
+
+.breadcrumb a:hover {  
+    text-decoration: underline;  
+}  
+
+.section {  
+    text-align: center;  
+    padding: 50px;  
+}
+
+.section h1 {  
+    font-size: 36px;  
+    margin-bottom: 20px;  
+    color: #ff7f00;  
+    font-family: 'Abril Fatface', cursive; /* Consistent with section titles */  
+}  
+
+.section p {  
+    font-size: 18px;  
+    line-height: 1.6;  
+    max-width: 800px;  
+    margin: 0 auto;  
+    color: #fff;  /* Maintain text color consistency */  
+    font-family: 'Roboto', sans-serif; /* Use base font style */  
+}  
+
+.section ul {  
+    list-style: none;  /* Remove default bullets */  
+    padding: 0;    /* Remove padding */  
+    margin: 20px auto; /* Center the list horizontally */  
+    max-width: 600px; /* Limit width for better readability */  
+}  
+
+.section ul li {  
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff7f00"><circle cx="12" cy="12" r="6"/></svg>') no-repeat left center; /* Custom bullet with orange color */  
+    background-size: 10px 10px; /* Set size for the bullet */  
+    padding-left: 20px; /* Space for bullets */  
+    text-align: left; /* Align text to the left */  
+    color: #fff;  /* Match text color */  
+    margin: 10px 0; /* Space between list items */  
+}
+
+.signature-scents {  
+    display: flex;                /* Use flexbox for layout */  
+    flex-wrap: wrap;             /* Allow wrapping for responsiveness */  
+    justify-content: center;      /* Center the items */  
+    margin-top: 20px;            /* Space above the scent list */  
+}  
+
+.scent {  
+    background-color: #333;   /* Dark background for each scent box */  
+    border-radius: 8px;          /* Rounded corners */  
+    padding: 20px;               /* Space inside each scent box */  
+    margin: 10px;                /* Space between scent boxes */  
+    max-width: 250px;            /* Limit the width of each box */  
+    text-align: left;            /* Left-align text */  
+    transition: transform 0.3s;  /* Add some transition effect */  
+}  
+
+.scent img {  
+    width: 100%;                 /* Full width images */  
+    height: auto;                /* Maintain aspect ratio */  
+    border-radius: 8px;          /* Rounded corners for images */  
+}  
+
+.scent:hover {  
+    transform: scale(1.05);      /* Slight zoom on hover */  
+}
+
+
+.section-banner {  
+    display: flex;  
+    justify-content: center;   
+    margin: 20px 0;   
+}  
+
+.product-image {  
+    width: 100%;  
+    max-width: 1440px;  
+    height: auto;   
+    object-fit: cover;  
+}  
+
+.section h1 {  
+    font-size: 36px;  
+    margin-bottom: 20px;  
+    color: #ff7f00;  
+    font-family: 'Abril Fatface', cursive; /* Maintain header font for section titles */  
+}  
+
+.section p {  
+    font-size: 18px;  
+    line-height: 1.6;  
+    max-width: 800px;  
+    margin: 0 auto;  
+    font-family: 'Roboto', sans-serif; /* Use the base font for body text */  
+}  
+
+.vision-mission-container {  
+    text-align: center;   
+    padding: 50px;   
+}  
+
+.vision-mission-title {  
+    color: #ff7f00;  
+    margin-bottom: 30px;  
+    font-size: 2em;  
+    font-family: 'Abril Fatface', cursive; /* Title in the decorative font */  
+}  
+
+.vision-mission {  
+    display: flex;  
+    justify-content: space-around;  
+    padding: 50px;  
+}  
+
+.vision-mission div {  
+    max-width: 300px;  
+}  
+
+.vision-mission h3 {  
+    color: #ff7f00;  
+    margin-bottom: 20px;  
+    font-family: 'Inter', sans-serif; /* Stronger font for headings under Vision and Mission */  
+}  
+
+/* /// Footer Styles   */
+footer {  
+    background-color: #1c1c1c;  
+    color: #fff;  
+    padding: 20px 50px;  
+}  
+
+.footer-container {  
+    display: flex;  
+    justify-content: space-between;  
+    flex-wrap: wrap;  
+    align-items: flex-start;  
+}  
+
+.footer-brand {  
+    flex: 1;  
+}  
+
+.footer-brand h3 {  
+    color: #ff7f00;  
+    margin-bottom: 10px;  
+    font-family: 'Abril Fatface', cursive;  
+}  
+
+.footer-links h4 {  
+    color: #ff7f00;  
+    margin-bottom: 10px;  
+    font-family: 'Inter', sans-serif;  
+    font-weight: 700;  
+}  
+
+.footer-links a {  
+    color: #fff;  
+    text-decoration: none;  
+    display: block;  
+    margin-bottom: 5px;  
+    font-family: 'ABeeZee', sans-serif;  
+}   
+
+footer .social {  
+    display: flex;  
+    gap: 10px;  
+}  
+
+footer .social a {  
+    color: #ff7f00;  
+    font-size: 1.5em;  
+}  
+
+@media (max-width: 768px) {  
+    header {  
+        flex-direction: column;  
+        text-align: center;  
+    }  
+}  
+
+.footer-links {  
+    display: flex;  
+    justify-content: center;  
+    flex: 10;  
+}  
+
+.footer-links > div {  
+    margin: 0 20px;  
+    text-align: center;  
+}  
+
+.footer-links h4 {  
+    color: #ff7f00;  
+    margin-bottom: 10px;  
+}  
+
+.footer-links a:hover {  
+    text-decoration: underline;  
+}  
+
+@media (max-width: 768px) {  
+    header {  
+        flex-direction: column;  
+        text-align: center;  
+    }  
+    .footer-links {  
+        flex-direction: column;  
+    }  
+}
